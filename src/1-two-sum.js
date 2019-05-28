@@ -28,3 +28,21 @@ var twoSum = function(nums, target) {
     }
   }
 }
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+  var obj = {};
+  var i, l = nums.length;
+  for (i = 0; i < l; ++i) {
+    var n = nums[i],
+        del = target - nums[i];
+    if (obj[del] !== undefined) {
+      return [obj[del], i];
+    }
+    obj[n] = i
+  }
+};
